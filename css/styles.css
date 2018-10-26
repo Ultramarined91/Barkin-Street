@@ -153,17 +153,25 @@ footer {
   justify-content: center;
 }
 
-.social-media {
-  border: 1px solid black;
+.footer-content-left {
+  width: 30%;
+  background-color: #6B7A8F;
+}
+
+.footer-content-center {
   width: 40%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  background-color: #6B7A8F;
+}
+
+.footer-content-right {
+  width: 30%;
+  background-color: #6B7A8F;
 }
 
 .copyright {
   height: 30px;
   background-color: #F7882F;
+  color: #DCC7AA;
   line-height: 30px;
   font-size: 0.8em;
   text-align: center;
