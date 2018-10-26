@@ -3,3 +3,52 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.page {
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+header {
+  border: 1px solid black;
+}
+
+.featured {
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.logo {
+  border: 1px solid black;
+  width: 33.33%;
+  position: absolute;
+}
+
+.featured-picture {
+  border: 1px solid black;
+  width: 33.33%;
+  height: 300px;
+}
+
+nav {
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.menu {
+  border: 1px solid black;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu > li {
+  list-style: none;
+}
