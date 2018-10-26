@@ -68,7 +68,6 @@ nav {
 .menu {
   font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
-
   width: 80%;
   display: flex;
   justify-content: space-between;
@@ -94,7 +93,7 @@ nav {
 
 .content-main {
   width: 65%;
-  padding-right: 30px;
+  padding-right: 50px;
 }
 
 .content-side {
@@ -109,7 +108,7 @@ nav {
 }
 
 .dog {
-  width: 300px;
+  width: 280px;
   height: 400px;
   margin-bottom: 10px;
 }
@@ -145,5 +144,27 @@ nav {
 
 footer {
   height: 300px;
-  background-color: #6B7A8F;
+  background-color: #DCC7AA;
+}
+
+.footer-content {
+  height: 270px;
+  display: flex;
+  justify-content: center;
+}
+
+.social-media {
+  border: 1px solid black;
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.copyright {
+  height: 30px;
+  background-color: #F7882F;
+  line-height: 30px;
+  font-size: 0.8em;
+  text-align: center;
 }
