@@ -28,6 +28,23 @@ header {
   margin-bottom: 30px;
 }
 
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.header-top-left {
+  width: 500px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.search {
+  margin-right: 20px;
+}
+
 .login {
   position: absolute;
   width: 100%;
@@ -35,6 +52,11 @@ header {
   justify-content: flex-end;
   margin-top: 20px;
   padding-right: 20px;
+}
+
+.login2 {
+  display: flex;
+  align-self: center;
 }
 
 .featured {
@@ -54,6 +76,9 @@ header {
   margin-top: 20px;
 }
 
+.logo2 {
+}
+
 .featured-picture {
 
   width: 33.33%;
@@ -63,13 +88,12 @@ header {
 nav {
   display: flex;
   justify-content: center;
-  padding: 20px 0;
+  padding: 15px 0;
   background-color: #F7882F;
 }
 
 .menu {
   font-family: 'Ubuntu', sans-serif;
-  font-weight: bold;
   width: 80%;
   display: flex;
   justify-content: space-between;
@@ -80,7 +104,22 @@ nav {
 }
 
 .menu li a{
-  color: #FAFAFA;
+  color: #212121;
+}
+
+.banner {
+  height: 300px;
+  color: #212121;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../images/whats-on-banner.jpg);
+  background-size: cover;
+  background-position: right;
+}
+
+.main {
 }
 
 .content {
