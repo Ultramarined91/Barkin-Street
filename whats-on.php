@@ -72,6 +72,7 @@ for ($day = 1; $day <= $day_count; $day++, $str++) {
     <meta charset="utf-8">
     <title>Barkin Street - What's On</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/calendar.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Ubuntu" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="favicon.png">
   </head>
@@ -98,7 +99,7 @@ for ($day = 1; $day <= $day_count; $day++, $str++) {
             <ul class="menu">
               <li><a href="index.html">Home</a></li>
               <li><a href="#">About us</a></li>
-              <li><a href="#">Adoption</a></li>
+              <li><a href="adoption.html">Adoption</a></li>
               <li><a href="#">What's on</a></li>
               <li><a href="#">Donate</a></li>
               <li><a href="#">Contact us</a></li>
@@ -110,28 +111,30 @@ for ($day = 1; $day <= $day_count; $day++, $str++) {
           </div>
       </header>
 
-      <div class="main">
-        <div class="calendar">
-          <h3><a href="?ym=<?php echo $prev; ?>">&lt;</a> <?php echo $html_title; ?> <a href="?ym=<?php echo $next; ?>">&gt;</a></h3>
-          <br>
-          <table>
-            <thead>
-              <th>Sunday</th>
-              <th>Monday</th>
-              <th>Tuesday</th>
-              <th>Wednesday</th>
-              <th>Thursday</th>
-              <th>Friday</th>
-              <th>Saturday</th>
-            </thead>
-            <?php
-              foreach ($weeks as $week) {
-                echo $week;
-              }
-            ?>
-          </table>
+      <div class="main" id="main">
+        <div class="content">
+          <div class="calendar">
+            <h3><a href="?ym=<?php echo $prev; ?>#main">&lt;</a> <?php echo $html_title; ?> <a href="?ym=<?php echo $next; ?>#main">&gt;</a></h3>
+            <br>
+            <table class="calendar-table">
+              <thead>
+                <th>Sunday</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+              </thead>
+              <?php
+                foreach ($weeks as $week) {
+                  echo $week;
+                }
+              ?>
+            </table>
+          </div>
         </div>
-      </div>
+        </div>
 
       <footer>
         <div class="footer-content">

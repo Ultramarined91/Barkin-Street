@@ -1,0 +1,24 @@
+.calendar {
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  padding-top: 20px;
+}
+
+.calendar h3 {
+  text-align: center;
+}
+
+.calendar-table {
+  border-collapse: separate;
+  border-spacing: 10px;
+  width: 100%;
+}
+
+th, td {
+  padding: 10px;
+}
+
+td {
+  border: 1px solid black;
+  height: 200px;
+}
