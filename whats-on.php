@@ -90,7 +90,7 @@ for ($day = 1; $day <= $day_count; $day++, $str++) {
               </form>
             </div>
             <div class="login2">
-              <a href="#">Login</a> <p>&nbsp;|&nbsp;</p> <a href="#">Register</a>
+              <a href="#">Login</a> <p>&nbsp;|&nbsp;</p> <a href="registration.php">Register</a>
             </div>
           </div>
         </div>
