@@ -1,69 +1,29 @@
 <?php
-// set time zone
-date_default_timezone_set('Asia/Singapore');
+  include "dbconnect.php";
 
-// get previous and next month
-if (isset($_GET['ym'])) {
-  $ym = $_GET['ym'];
-} else {
-  // this month
-  $ym = date('Y-m');
-}
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-// check format
-$timestamp = strtotime($ym . '-01');
-if ($timestamp === false) {
-  $ym = date('Y-m');
-  $timestamp = strtotime($ym . '-01');
-}
+    if ($username != NULL && $password != NULL) {
+      if (!get_magic_quotes_gpc()) {
+        $username = addslashes($username);
+        $password = addslashes($password);
+      }
 
-// today
-$today = date('Y-m-j', time());
-
-// h3 title
-$html_title = date('Y / m', $timestamp);
-
-// create previous and next month link... mktime(hour, minute, second, month, day, year)
-$prev = date('Y-m', mktime(0, 0, 0, date('m', $timestamp)-1, 1, date('Y', $timestamp)));
-$next = date('Y-m', mktime(0, 0, 0, date('m', $timestamp)+1, 1, date('Y', $timestamp)));
-
-// number of days in the month
-$day_count = date('t', $timestamp);
-
-// 0:Sun 1:Mon 2:Tue...
-$str = date('w', mktime(0, 0, 0, date('m', $timestamp), 1, date('Y', $timestamp)));
-
-// create calendar
-$weeks = array();
-$week = '';
-
-// add empty cell
-$week .= str_repeat('<td></td>', $str);
-
-for ($day = 1; $day <= $day_count; $day++, $str++) {
-
-  $date = $ym . '-' . $day;
-
-  if($today == $date) {
-    $week .= '<td class="today">' . $day;
-  } else {
-    $week .= '<td>'. $day;
-  }
-  $week .= '</td>';
-
-  // End of the week or end of the month
-  if ($str % 7 == 6 || $day == $day_count) {
-    if($day == $day.count) {
-      // add empt cell
-      $week .= str_repeat('<td></td>', 6 - ($str % 7));
+      $query = "select * from users where username = '".$username."' and password = '".$password."'";
+      $result = $db->query($query);
+      if ($result->num_rows > 0) {
+         $_SESSION['user'] = $row['name'];
+         echo "<script> location.href='index.html'; </script>";
+         exit;
+      }
+      else {
+        $authfail = "Username and password do not match.";
+      }
     }
-
-    $weeks[] = '<tr>' . $week . '</tr>';
-
-    // prepare for new week
-    $week = '';
   }
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -103,41 +63,45 @@ for ($day = 1; $day <= $day_count; $day++, $str++) {
         <ul class="menu">
           <li><a href="index.html">Home</a></li>
           <li><a href="#">About us</a></li>
-          <li><a href="adoption.html">Adoption</a></li>
-          <li><a href="#">What's on</a></li>
+          <li><a href="#">Adoption</a></li>
+          <li><a href="whats-on.php">What's on</a></li>
           <li><a href="#">Donate</a></li>
           <li><a href="#">Contact us</a></li>
         </ul>
       </nav>
 
       <div class="banner">
-        <h1>What's On</h1>
+        <h1>Registeration</h1>
       </div>
     </header>
 
     <div class="main" id="main">
       <div class="content">
-        <div class="calendar">
+        <div class="log-in">
+          <header><h2>Log in</h2></header>
+          <p><?php echo $authfail; ?></p>
 
-          <h3><a href="?ym=<?php echo $prev; ?>#main">&lt;</a> <?php echo $html_title; ?> <a href="?ym=<?php echo $next; ?>#main">&gt;</a></h3>
-          <br>
+          <form class="login-form" method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
+            <table class="login-table">
+              <tr>
+                <th>Username</th>
+                <td><input type="text" name="username" required></td>
+              </tr>
+              <tr>
+                <th>Password</th>
+                <td><input type="password" name="password" required></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><input type="submit" value="Log in"></td>
+              </tr>
+            </table>
+          </form>
 
-          <table class="calendar-table">
-            <thead>
-              <th>Sunday</th>
-              <th>Monday</th>
-              <th>Tuesday</th>
-              <th>Wednesday</th>
-              <th>Thursday</th>
-              <th>Friday</th>
-              <th>Saturday</th>
-            </thead>
-            <?php
-              foreach ($weeks as $week) {
-                echo $week;
-              }
-            ?>
-          </table>
+          <p>
+            Not a part of the committee yet?
+            <a href="registration.php">Register now!</a>
+          </p>
 
         </div>
       </div>
