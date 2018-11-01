@@ -2,19 +2,22 @@
 
 #### Web pages
 	1. Home page: index.html
-	2. What's On page: whats-on.php
-	3. Adoption page: adoption.html
-	4. Registration page: registration.php
-	5. Log in page: login.php
+	2. Registration page: registration.php
+	3. Log in page: login.php
+	4. What's On page: whats-on.php
+	5. Adoption page: adoption.html
 	6. About us (hard-coded)
 	7. Contact us (hard-coded)
 	8. News & events (hard-coded)
 	9. Donation (hard-coded)
 	10. Appointment (hard-coded)
+	11. Account?
 	
 #### Databases
 	* Dogs
 	* Users
+	* Appointments
+	* Events
 	
 #### To-dos
 	* [x] Basic framework for index.html
@@ -22,10 +25,16 @@
 	* [x] Basic framework for calendar in What's On page
 	* [x] Basic framework for adptoption.html
 	* [x] Basic user registration function
-	* [ ] Revise user registration with validation
 	* [ ] Log in authentication function
-	* [ ] User session function
 	* [ ] Log out function
+	* [ ] User session
+	
+	* [ ] Registration: revise user registration with validation for name, contact number, password
+	* [ ] Home: hard code content and navigation
+	* [ ] What's On: fill calendar with contents (from database)	
+	* [ ] Adoption: recommeded for you based on user profile (session)
+	* [ ] Adoption: filter function
+	* [ ] Adoption: table for displaying filtered dogs
 
 #### Logs
 	* 2018-10-25 **Initial commit**: Creating git files
