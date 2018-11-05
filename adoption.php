@@ -1,6 +1,8 @@
 <?php
   session_start();
+  include "dbconnect.php";
 
+  // session
   $welcome = '<a href="login.php">Login</a>
               <p>&nbsp;|&nbsp;</p>
               <a href="registration.php">Register</a>';
@@ -8,6 +10,73 @@
   if (isset($_SESSION['username'])) {
     $welcome = '<p>Hello, '.$_SESSION["user"].'! &nbsp;|&nbsp;</p>
                 <a href="logout.php">Log out</a>';
+  }
+
+
+  // HDB 3-room, 4-room -> small, medium dogs
+  if ($_SESSION['housing'] == 'HDB 3-room' || $_SESSION['housing'] == 'HDB 4-room') {
+    $recdogs = array();
+    $i= 0;
+    $query = "select * from dogs where size in ('small', 'medium') and adopter = 0";
+    $result = $db->query($query);
+    if ($result->num_rows > 0 ) {
+      while($row = $result->fetch_assoc()) {
+        $recdogs[$i] = $row["image"];
+        $i++;
+      }
+    }
+  }
+
+  // HDB 5-room, Condominium -> medium dogs
+  if ($_SESSION['housing'] == 'HDB 5-room' || $_SESSION['housing'] == 'Condominium') {
+    $recdogs = array();
+    $i= 0;
+    $query = "select * from dogs where size in ('medium') and adopter = 0";
+    $result = $db->query($query);
+    if ($result->num_rows > 0 ) {
+      while($row = $result->fetch_assoc()) {
+        $recdogs[$i] = $row["image"];
+        $i++;
+      }
+    }
+  }
+
+  // Landed property -> medium, large dogs
+  if ($_SESSION['housing'] == 'Landed property') {
+    $recdogs = array();
+    $i = 0;
+    $query = "select * from dogs where size in ('medium', 'large') and adopter = 0";
+    $result = $db->query($query);
+    if ($result->num_rows > 0 ) {
+      while($row = $result->fetch_assoc()) {
+        $recdogs[$i] = $row["image"];
+        $i++;
+      }
+    }
+  }
+
+  if ($SERVER["REQUEST_METHOD"] == "POST") {
+    $breed = $_POST['breed'];
+    $size = $_POST['size'];
+    $age = $_POST['age'];
+    $filterResults = "hello";
+
+    if ($breed && $size && $age != 0){
+      if ($age == "Young") {
+        $query = "select * from dogs where breed = '".$breed."' and size = '".$size."' and age =< 3";
+        $result = $db->query($query);
+        if ($result-> num_rows > 0) {
+          while($row = $result->fetch_assoc()) {
+            echo "Hello";
+          }
+        }
+      }
+    }
+
+
+
+
+
   }
 
 ?>
@@ -66,44 +135,59 @@
 
           <section class="container adoption-recommended">
             <div class="dog">
-              <figure><img src="" alt=""></figure>
+              <figure><img src=<?php echo "images/dogs/".$recdogs[0];?> alt=""></figure>
             </div>
             <div class="dog">
-              <figure><img src="" alt=""></figure>
+              <figure><img src=<?php echo "images/dogs/".$recdogs[1];?> alt=""></figure>
             </div>
             <div class="dog">
-              <figure><img src="" alt=""></figure>
+              <figure><img src=<?php echo "images/dogs/".$recdogs[2];?> alt=""></figure>
             </div>
             <div class="dog">
-              <figure><img src="" alt=""></figure>
+              <figure><img src=<?php echo "images/dogs/".$recdogs[3];?> alt=""></figure>
             </div>
             <div class="dog">
-              <figure><img src="" alt=""></figure>
+              <figure><img src=<?php echo "images/dogs/".$recdogs[4];?> alt=""></figure>
             </div>
           </section>
 
           <article class="container adoption-main">
             <header><h2>Search for your ideal dog</h2></header>
-            <form class="fitler-form" action="index.html" method="post">
-              <select class="filter1" name="filter1">
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
+            <form class="fitler-form" method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
+              <label>Breed:</label>
+              <select class="filter1" name="breed">
+                <option value="0">No preference</option>
+                <?php
+                  $query = "select distinct breed from dogs";
+                  $result = $db->query($query);
+                  if ($result->num_rows > 0 ) {
+                    while($row = $result->fetch_assoc()) {
+                      echo '<option value="'.$row["breed"].'">'.$row["breed"].'</option>';
+                    }
+                  }
+                ?>
               </select>
-              <select class="filter1" name="filter1">
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
+              <label>Size:</label>
+              <select class="filter1" name="size">
+                <option value="0">No preference</option>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="Large">Large</option>
               </select>
-              <select class="filter1" name="filter1">
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
+              <label>Age:</label>
+              <select class="filter1" name="age">
+                <option value="No preference">No preference</option>
+                <option value="Young">Young</option>
+                <option value="Adult">Adult</option>
               </select>
+              <input type ="submit" value="Submit">
             </form>
+
+            <div class="filtered-dogs">
+              <p>
+                <?php echo $filterResults; ?>
+              </p>
+            </div>
           </article>
 
         </div>

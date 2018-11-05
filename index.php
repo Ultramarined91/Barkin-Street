@@ -51,7 +51,7 @@
         <ul class="menu">
           <li><a href="#">Home</a></li>
           <li><a href="about-us.php">About us</a></li>
-          <li><a href="adoption.html">Adoption</a></li>
+          <li><a href="adoption.php">Adoption</a></li>
           <li><a href="whats-on.php">What's on</a></li>
           <li><a href="donate.php">Donate</a></li>
           <li><a href="cpntact-us.php">Contact us</a></li>
