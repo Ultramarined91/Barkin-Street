@@ -41,7 +41,7 @@
         $createUser = "insert into users (name, contact, email, housing, experience, username, password) values ('".$name."', ".$contact.", '".$email."', '".$housing."', '".$experience."', '".$username."', '".$password."')";
         $result = $db->query($createUser);
 
-        echo "<script> location.href='index.html'; </script>";
+        echo "<script> location.href='login.php'; </script>";
         exit;
       }
 

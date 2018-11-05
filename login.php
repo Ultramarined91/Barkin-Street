@@ -1,5 +1,7 @@
 <?php
+  session_start();
   include "dbconnect.php";
+
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
@@ -14,11 +16,22 @@
       $query = "select * from users where username = '".$username."' and password = '".$password."'";
       $result = $db->query($query);
       if ($result->num_rows > 0) {
-         $_SESSION['user'] = $row['name'];
-         echo "<script> location.href='index.html'; </script>";
-         exit;
+        // if valid user, create session
+        while($row = $result->fetch_assoc()) {
+          $_SESSION['user'] = $row['name'];
+          $_SESSION['contact'] = $row['contact'];
+          $_SESSION['email'] = $row['email'];
+          $_SESSION['housing'] = $row['housing'];
+          $_SESSION['experience'] = $row['experience'];
+          $_SESSION['username'] = $row['username'];
+        }
+
+        // redirect back to index page after logging in
+        echo "<script> location.href='index.php'; </script>";
+        exit;
       }
       else {
+        // if not valid user
         $authfail = "Username and password do not match.";
       }
     }
@@ -71,7 +84,7 @@
       </nav>
 
       <div class="banner">
-        <h1>Registeration</h1>
+        <h1>Log in</h1>
       </div>
     </header>
 
