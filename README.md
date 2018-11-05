@@ -1,18 +1,15 @@
 # Barkin-Street (2018-10-30)
 
 #### Web pages
-	1. Home page: index.html
-	2. Registration page: registration.php
-	3. Log in page: login.php
-	4. What's On page: whats-on.php
-	5. Adoption page: adoption.html
-	6. About us (hard-coded)
-	7. Contact us (hard-coded)
-	8. News & events (hard-coded)
-	9. Donation (hard-coded)
-	10. Appointment (hard-coded)
-	11. Account?
-	
+	1. Home page: index.php ***
+	2. About Us page: about-us.php
+	3. Adoption page: adoption.php ***
+	4. What's On page: whats-on.php ***
+	5. Donate page: donate.php
+	6. Contact Us page: contact-us.php
+	7. Login page: login.php ***
+	8. Registration page: registration.php ***
+
 #### Databases
 	* Dogs
 	* Users
@@ -20,26 +17,34 @@
 	* Events
 	
 #### To-dos
-	* [x] Basic framework for index.html
-	* [x] Basic styling styles.css
-	* [x] Basic framework for calendar in What's On page
-	* [x] Basic framework for adptoption.html
-	* [x] Basic user registration function
-	* [ ] Log in authentication function
-	* [ ] Log out function
-	* [ ] User session
+	* [x] Basic framework for index.php
+	* [x] Basic framework for all pages except index.php
+	* [x] CSS styling
 	
-	* [ ] Registration: revise user registration with validation for name, contact number, password
-	* [ ] Home: hard code content and navigation
-	* [ ] What's On: fill calendar with contents (from database)	
-	* [ ] Adoption: recommeded for you based on user profile (session)
-	* [ ] Adoption: filter function
-	* [ ] Adoption: table for displaying filtered dogs
-
+	* [ ] Home page: content
+	* [ ] About Us page: content
+	* [x] Adoption page: recommendation based on user profile (database)
+	* [ ] Adoption page: two layers filter for dogs (database)
+	* [ ] Adoption page: content
+	* [x] What's On page: calendar layout
+	* [ ] What's On page: fill calendar with events (database)
+	* [ ] What's On page: content
+	* [ ] Donate page: donation form (input into database)
+	* [ ] Donate page: content
+	* [ ] Contact Us page: contact form (input into database)
+	* [ ] Contact Us page: content
+	* [x] Log in page: log in form, authentication
+	* [x] Registration page: registration form (input into database)
+	* [x] Log out function
+	* [x] User session
+	
 #### Logs
-	* 2018-10-25 **Initial commit**: Creating git files
-	* 2018-10-27 **Calendar is in php**: Create What's On page with calendar view
-	* 2018-10-27 **SQL for creating tables dogs and users**: SQL scripts for creating tables in database
-	* 2018-10-28 **Adoption page**: Create Adoption page
-	* 2018-10-30 **Registration function**: Create registration function, insert new user to database, check for existing username and email
+	* 2018-10-25 Initial commit: Creating git files
+	* 2018-10-27 Calendar is in php: Create What's On page with calendar view
+	* 2018-10-27 SQL for creating tables dogs and users: SQL scripts for creating tables in database
+	* 2018-10-28 Adoption page: Create Adoption page
+	* 2018-10-30 Registration function: Create registration function, insert new user to database, check for existing username and email
+	* 2018-11-01 Refined: Organized folders and combined codes
+	* 2018-11-05 All html to php. Session, log in, log out function: Included user sessions
+	* 2018-11-06 Recommendation: Recommendation based on user profile in adoption page done
 	
