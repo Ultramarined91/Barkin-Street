@@ -31,19 +31,18 @@
         <div class="login">
           <?php echo $welcome; ?>
         </div>
-
         <div class="logo">
           <img src="images/logo.png" alt="logo" height="80">
         </div>
 
         <div class="featured-picture">
-          <img src="" alt="">
+          <img src="images/dogs/01-adora.jpeg" alt="">
         </div>
         <div class="featured-picture">
-          <img src="" alt="">
+          <img src="images/dogs/04-toby.jpg" alt="">
         </div>
         <div class="featured-picture">
-            <img src="" alt="">
+            <img src="images/dogs/02-chester.jpeg" alt="">
         </div>
       </div>
 

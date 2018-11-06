@@ -57,7 +57,6 @@
   <meta charset="utf-8">
   <title>Barkin Street - What's On</title>
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/calendar.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto|Ubuntu" rel="stylesheet">
   <link rel="shortcut icon" type="image/png" href="images/icons/favicon.png">
 </head>
@@ -101,7 +100,7 @@
 
     <div class="main" id="main">
       <div class="content">
-        <div class="registeration">
+        <div class="registration">
           <header><h2>Create an account</h2></header>
 
           <form class="registration-form" method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">

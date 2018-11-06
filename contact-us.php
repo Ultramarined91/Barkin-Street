@@ -19,7 +19,6 @@
   <meta charset="utf-8">
   <title>Adoption - Barkin Street</title>
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/calendar.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto|Ubuntu" rel="stylesheet">
   <link rel="shortcut icon" type="image/png" href="images/icons/favicon.png">
 </head>
