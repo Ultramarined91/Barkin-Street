@@ -90,23 +90,22 @@
     <div class="main" id="main">
       <div class="content">
 
-        <div class="login">
+        <div class="login-page fill">
           <header><h2>Log in</h2></header>
           <p><?php echo $authfail; ?></p>
 
           <form class="login-form" method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
             <table class="login-table">
               <tr>
-                <th>Username</th>
-                <td><input type="text" name="username" required></td>
+                <label for="username">Username</label>
+                <input type="text" name="username" required>
               </tr>
               <tr>
-                <th>Password</th>
-                <td><input type="password" name="password" required></td>
+                <label for="password">Password</label>
+                <input type="password" name="password" required>
               </tr>
               <tr>
-                <td></td>
-                <td><input type="submit" value="Log in"></td>
+                <input class="submit-btn" type="submit" value="Log in">
               </tr>
             </table>
           </form>

@@ -84,12 +84,12 @@
 
       <nav>
         <ul class="menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#">About us</a></li>
-          <li><a href="#">Adoption</a></li>
+          <li><a href="index.php">Home</a></li>
+          <li><a href="about-us.php">About us</a></li>
+          <li><a href="adoption.php">Adoption</a></li>
           <li><a href="whats-on.php">What's on</a></li>
-          <li><a href="#">Donate</a></li>
-          <li><a href="#">Contact us</a></li>
+          <li><a href="donate.php">Donate</a></li>
+          <li><a href="contact-us.php">Contact us</a></li>
         </ul>
       </nav>
 
@@ -100,58 +100,56 @@
 
     <div class="main" id="main">
       <div class="content">
-        <div class="registration">
+        <div class="registration fill">
           <header><h2>Create an account</h2></header>
 
           <form class="registration-form" method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
             <table class="registration-table">
               <tr>
-                <td>Name</td>
-                <td><input type="text" name="name" value="<?php echo $name;?>" required></td>
-                <td><?php echo $nameError;?></td>
+                <label for="name">Name</label>
+                <input type="text" name="name" value="<?php echo $name;?>" required>
+                <?php echo $nameError;?>
               </tr>
               <tr>
-                <td>Contact Number</td>
-                <td><input type="text" name="contact" value="<?php echo $contact;?>" required></td>
-                <td><?php echo $contactError;?></td>
+                <label for="contact">Contact</label>
+                <input type="text" name="contact" value="<?php echo $contact;?>" required>
+                <?php echo $contactError;?>
               </tr>
               <tr>
-                <td>Email</td>
-                <td><input type="email" name="email" value="<?php echo $email;?>" required></td>
+                <label for="contact">Email</label>
+                <input type="email" name="email" value="<?php echo $email;?>" required>
                 <td><?php echo $emailError;?></td>
               </tr>
               <tr>
-                <td>Housing Type</td>
-                <td><select name="housing">
+                <label for="contact">Housing Type</label>
+                <select name="housing">
                   <option value="NULL">Please select your housing type</option>
                   <option value="HDB 3-room">HDB 3-room</option>
                   <option value="HDB 4-room">HDB 4-room</option>
                   <option value="HDB 5-room">HDB 5-room</option>
                   <option value="Condominium">Condominium</option>
                   <option value="Landed property">Landed Property</option>
-                </select></td>
+                </select>
                 <td><?php echo $housingError;?></td>
               </tr>
               <tr>
-                <td>Experience</td>
-                <td><textarea name="experience" rows="3" value="<?php echo $experience;?>"></textarea></td>
+                <label for="contact">Experience</label>
+                <textarea name="experience" rows="2" value="<?php echo $experience;?>"></textarea>
                 <td><?php echo $experienceError;?></td>
               </tr>
               <tr></tr>
               <tr>
-                <td>Username</td>
-                <td><input type="text" name="username" value="<?php echo $username;?>" required></td>
+                <label for="contact">Username</label>
+                <input type="text" name="username" value="<?php echo $username;?>" required>
                 <td><?php echo $usernameError;?></td>
               </tr>
               <tr>
-                <td>Password</td>
-                <td><input type="password" name="password" value="<?php echo $password;?>" required></td>
+                <label for="contact">Password</label>
+                <input type="password" name="password" value="<?php echo $password;?>" required>
                 <td><?php echo $passwordError;?></td>
               </tr>
               <tr>
-                <td></td>
-                <td><input type ="submit" value="Submit"></td>
-                <td></td>
+                <input class="submit-btn" type ="submit" value="Submit">
               </tr>
             </table>
           </form>
