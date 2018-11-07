@@ -53,7 +53,7 @@
         </ul>
       </nav>
 
-      <div class="banner">
+      <div class="banner-contact-us">
         <h1>Contact Us</h1>
       </div>
     </header>
@@ -61,10 +61,28 @@
     <div class="main" id="main">
       <div class="content">
 
-        <div class="contact-us">
-          <p>Contact us content here...</p>
+        <div class="contact-us fill">
+          <h2>Get In Touch</h2>
+          <p>Keep in touch with Barkin-Street. </p>
+          <br>
+          <form class="" action="index.html" method="post">
+            <label for="email">Email</label>
+            <input id="email" type="text" name="" value="">
+            <label for="text">Subject</label>
+            <input id="subject" type="text" name="" value="">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message"></textarea>
+          </form>
+          <button type="button" name="button" class="submit-btn">Submit</button>
         </div>
 
+        <div class="address">
+
+        </div>
+
+      </div>
+
+      <div class="contact-bottom">
       </div>
     </div>
 
