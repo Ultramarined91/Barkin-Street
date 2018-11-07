@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #F5F5F5;
+  background-color: white;
 }
 
 h1, h2, h3, h4 {
@@ -104,6 +104,17 @@ nav {
   background-position: right;
 }
 
+.banner-contact-us {
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../images/banners/contact-us-banner.jpg);
+  background-size: cover;
+  background-position: right;
+  color: white;
+}
+
 .main {
   margin-top: 30px;
   margin-bottom: 20px;
@@ -179,7 +190,7 @@ footer {
 }
 
 .featured-picture {
-  width: 33.33%;
+  width: 100%;
   height: 360px;
 }
 
@@ -189,12 +200,6 @@ footer {
   height: 360px;
   object-fit: cover;
   object-position: center;
-  opacity: 0.5;
-  filter: alpha;
-}
-
-.featured-picture img:hover {
-  opacity: 1.0;
 }
 
 .content-main {
@@ -292,6 +297,79 @@ footer {
 }
 
 .adoption-main {
+}
+
+.contact-us {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #EFEFEF;
+}
+
+.address {
+  padding: 20px;
+  width: 30%;
+  background-image: url(../images/map.png);
+  background-position: left;
+  background-size: cover;
+}
+
+.fill label {
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.fill input {
+  outline: none;
+  width: 80%;
+  border: none;
+  border-bottom: 1px solid #EFEFEF;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+
+.fill select {
+  outline: none;
+  border-radius: 10px;
+  border: 1px solid #EFEFEF;
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+.contact-bottom {
+  width: 300px;
+  height: 200px;
+  background-color: #F7882F;
+}
+
+.login-page {
+  display: block;
+  margin: 0 auto;
+}
+
+.registration {
+  display: block;
+  margin: 0 auto;
+}
+
+.submit-btn {
+  border: none;
+  background-color: #F7882F;
+  border-radius: 20px;
+  width: 100px;
+  margin-top: 30px;
+  padding: 10px;
+  font-size: 1.2em;
+}
+
+textarea {
+  width: 80%;
+  height: 200px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #EFEFEF;
+  font-size: 1.2em;
 }
 
 .filter {
