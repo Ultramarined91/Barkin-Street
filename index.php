@@ -36,16 +36,9 @@
         </div>
 
         <div class="featured-picture">
-          <img src="images/dogs/01-adora.jpeg" alt="">
-        </div>
-        <div class="featured-picture">
-          <img src="images/dogs/04-toby.jpg" alt="">
-        </div>
-        <div class="featured-picture">
-            <img src="images/dogs/02-chester.jpeg" alt="">
+          <img src="images/featured.jpg" alt="">
         </div>
       </div>
-
       <nav>
         <ul class="menu">
           <li><a href="#">Home</a></li>
@@ -53,7 +46,7 @@
           <li><a href="adoption.php">Adoption</a></li>
           <li><a href="whats-on.php">What's on</a></li>
           <li><a href="donate.php">Donate</a></li>
-          <li><a href="cpntact-us.php">Contact us</a></li>
+          <li><a href="contact-us.php">Contact us</a></li>
         </ul>
       </nav>
     </header>
